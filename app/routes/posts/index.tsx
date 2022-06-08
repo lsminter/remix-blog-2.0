@@ -27,17 +27,20 @@ export default function Posts () {
   return(
     <main className="m-2">
       <h1 className="text-3xl">Posts</h1>
-      <ul>
-        {posts.map((post) => (
-          <li key={post.slug.current}>
-            <Link
-              to={post.slug.current}
-            > 
-              {post.title}
-            </Link>
-          </li>
-        ))}
-      </ul>
+      <div className="flex-row">
+        <ul>
+          {posts.map((post) => (
+            <li className="text-blue-800" key={post.slug.current}>
+              <Link
+                to={post.slug.current}
+              > 
+                {post.title}
+              </Link>
+            </li>
+          ))}
+        </ul>
+        <h1>I'm currently working on writing some more posts but here are a couple of mock posts and an actual post for writing a blog using Remix and Sanity as a cms. </h1>
+      </div>
     </main>
   )
 }
