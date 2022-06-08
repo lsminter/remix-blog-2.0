@@ -25,8 +25,8 @@ export const loader: LoaderFunction = async () => {
 export default function Posts () {
   const {posts} = useLoaderData<LoaderData>();
   return(
-    <main>
-      <h1>Posts</h1>
+    <main className="m-2">
+      <h1 className="text-3xl">Posts</h1>
       <ul>
         {posts.map((post) => (
           <li key={post.slug.current}>
