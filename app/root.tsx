@@ -8,6 +8,7 @@ import {
 } from "remix";
 import type { MetaFunction } from "remix";
 import styles from "./styles/app.css"
+import Header from "./components/header";
 
 export const meta: MetaFunction = () => {
   return { title: "Lucas' Blog" };
@@ -27,6 +28,7 @@ export default function App() {
         <Links />
       </head>
       <body>
+        <Header />
         <Outlet />
         <ScrollRestoration />
         <Scripts />
