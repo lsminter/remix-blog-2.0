@@ -3,13 +3,6 @@ import { Link, useLoaderData } from "@remix-run/react";
 import type { LoaderFunction } from "@remix-run/node"
 import { getPosts } from "~/models/post.server";
 
-type Post = {
-  title: string;
-  body: string;
-  slug: object;
-  _createdAt: Date;
-};
-
 type LoaderData = {
   posts: Awaited<ReturnType<typeof getPosts>>;
 };
@@ -24,6 +17,7 @@ export const loader: LoaderFunction = async () => {
 
 export default function Posts () {
   const {posts} = useLoaderData<LoaderData>();
+  console.log(posts)
   return(
     <main className="m-2">
       <h1 className="text-3xl">Posts</h1>
@@ -39,7 +33,6 @@ export default function Posts () {
             </li>
           ))}
         </ul>
-        <h1>I'm currently working on writing some more posts but here are a couple of mock posts and an actual post for writing a blog using Remix and Sanity as a cms. </h1>
       </div>
     </main>
   )

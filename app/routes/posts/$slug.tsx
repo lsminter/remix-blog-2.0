@@ -9,7 +9,6 @@ export const loader: LoaderFunction = async ({params}) => {
   const postData = groq`*[_type == "post" && slug.current == "${slug}"] [0]{
     title,
     author->,
-    category,
     body,
     publishedAt,
     slug
